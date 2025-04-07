@@ -1,32 +1,27 @@
-# De las listas trabajadas en el ejercicio #2, ingresar nuevos elementos a estas listas en diferentes posiciones y mostrar al final la nueva lista modificada
+# Crear una lista de palabras ingresadas por teclado, e identificar si alguna de ellas es palíndroma o no, al final arrojar cuantas, y cuales palabras son palíndromas, y mostrar la lista original.
 
-def invertir_lista_si_par_simple(lista_original):
-    """
-    Invierte una lista si su longitud es par, de forma simple.
-    """
-    if len(lista_original) % 2 == 0:
-        print("Lista original:", lista_original)
-        print("Lista invertida:", lista_original[::-1])  # Se invierte la lista directamente.
-    else:
-        print("La lista tiene longitud impar, no se invierte ni se imprime.")
+print("bienvenido al programa")
 
-# Lista original
-mi_lista = [1, 2, 3, 4, 5, 6]
+#crear lista para que el usuario ingrese la palabrra
 
-# Agregar nuevos elementos en diferentes posiciones
-mi_lista.append(7)  # Agregar un elemento al final
-mi_lista.insert(2, 10)  # Insertar 10 en la posición 2
-mi_lista.insert(4, 20)  # Insertar 20 en la posición 4
+palabras = []
 
-# Ejecutar la función con la lista modificada
-invertir_lista_si_par_simple(mi_lista)
+#definir cantidad de palabras para ingresar
 
-# Lista con cantidad impar de elementos para probar
-mi_lista_impar = [1, 2, 3, 4, 5]
+cantidad = int(input("cuantas palabra quiere ingresar ?:  "))
 
-# Agregar nuevos elementos también a esta lista
-mi_lista_impar.append(9)
-mi_lista_impar.insert(3, 15)
+#recibir las palabras
 
-# Ejecutar la función con la lista modificada
-invertir_lista_si_par_simple(mi_lista_impar)
+for _ in range (cantidad):
+    palabra = input ("ingresar la palabra: ").strip().lower() #convertir a minisculas y eliminar espacios
+    palabras.append(palabra) # compresion de lista para verificar palindormas
+
+#identificar palabras palindromas
+
+palindromas =[p for p in palabras if p == p[::-1]]
+
+#mostrar resultado
+
+print("\n lista original", palabras)
+print(f"\n total de palabras palindormas: {len(palindromas)}")
+print("palabras palindromas: ", palindromas)
